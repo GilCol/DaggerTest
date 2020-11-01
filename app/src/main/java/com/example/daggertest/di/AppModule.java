@@ -4,10 +4,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class AppModule {
+public abstract class AppModule {
 
     @Provides
     static String providesString() {
-        return "random string!";
+        return "Provided app module string!";
     }
 }
