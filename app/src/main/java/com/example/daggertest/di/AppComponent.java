@@ -9,11 +9,14 @@ import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
+import gil.com.feature.di.FeatureComponent;
+import gil.com.feature.di.FeatureModule;
 
 @Component(modules = {
         AndroidSupportInjectionModule.class,
         ActivityBuildersModule.class,
-        AppModule.class
+        AppModule.class,
+        FeatureModule.class
 })
 public interface AppComponent extends AndroidInjector<MyApplication> {
     @Component.Builder
@@ -27,4 +30,6 @@ public interface AppComponent extends AndroidInjector<MyApplication> {
 
         AppComponent build();
     }
+
+    FeatureComponent.Factory factoryComponent();
 }
